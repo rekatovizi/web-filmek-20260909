@@ -108,9 +108,10 @@ for (const film of filmek) {
     sor.appendChild(genreCell);
 
     const ratingCell = document.createElement("td");
-    ratingCell.textContent = film.rating;
+    const stars = "⭐".repeat(film.rating);
+    ratingCell.textContent = stars;
     if (film.rating < 3) {
-        ratingCell.classList.add("low-rating");
+        sor.classList.add("low-rating");
     }
     sor.appendChild(ratingCell);
 
