@@ -109,6 +109,9 @@ for (const film of filmek) {
 
     const ratingCell = document.createElement("td");
     ratingCell.textContent = film.rating;
+    if (film.rating < 3) {
+        ratingCell.classList.add("low-rating");
+    }
     sor.appendChild(ratingCell);
 
     table.appendChild(sor);
