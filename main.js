@@ -91,30 +91,91 @@ const filmek = [
   }
 ];
 
+
 const table = document.getElementById("tartalom");
+
 for (const film of filmek) {
 
-    const sor = document.createElement("tr");
-    const titleCell = document.createElement("td");
-    titleCell.textContent = film.title;
-    sor.appendChild(titleCell);
+  const sor = document.createElement("tr");
 
-    const yearCell = document.createElement("td");
-    yearCell.textContent = film.year;
-    sor.appendChild(yearCell);
+  const titleCell = document.createElement("td");
+  titleCell.textContent = film.title;
+  sor.appendChild(titleCell);
 
-    const genreCell = document.createElement("td");
-    genreCell.textContent = film.genre;
-    sor.appendChild(genreCell);
+  const yearCell = document.createElement("td");
+  yearCell.textContent = film.year;
+  sor.appendChild(yearCell);
 
-    const ratingCell = document.createElement("td");
-    const stars = "⭐".repeat(film.rating);
-    ratingCell.textContent = stars;
-    if (film.rating < 3) {
-        sor.classList.add("low-rating");
-    }
-    sor.appendChild(ratingCell);
+  const genreCell = document.createElement("td");
+  genreCell.textContent = film.genre;
+  sor.appendChild(genreCell);
 
-    table.appendChild(sor);
- 
+  const ratingCell = document.createElement("td");
+  const stars = "⭐".repeat(film.rating);
+  ratingCell.textContent = stars;
+
+  if (film.rating < 3) {
+    sor.classList.add("low-rating");
+  }
+
+  sor.appendChild(ratingCell);
+
+  table.appendChild(sor);
+}
+
+
+function Add() {
+
+  let title = document.getElementById("title").value;
+  let year = document.getElementById("year").value;
+  let genre = document.getElementById("genre").value;
+  let rating = document.getElementById("rating").value;
+
+  if (rating < 1 || rating > 5) {
+    alert("A rating 1 és 5 között lehet!");
+    return;
+  }
+
+  let film = {
+    title: title,
+    year: year,
+    genre: genre,
+    rating: Number(rating)
+  };
+
+  // Hozzáadjuk a meglévő filmek listájához
+  filmek.push(film);
+
+  // Új sor létrehozása
+  const sor = document.createElement("tr");
+
+  const titleCell = document.createElement("td");
+  titleCell.textContent = film.title;
+  sor.appendChild(titleCell);
+
+  const yearCell = document.createElement("td");
+  yearCell.textContent = film.year;
+  sor.appendChild(yearCell);
+
+  const genreCell = document.createElement("td");
+  genreCell.textContent = film.genre;
+  sor.appendChild(genreCell);
+
+  const ratingCell = document.createElement("td");
+  ratingCell.textContent = "⭐".repeat(film.rating);
+
+  if (film.rating < 3) {
+    sor.classList.add("low-rating");
+  }
+
+  sor.appendChild(ratingCell);
+
+  // Az új sor bekerül a meglévő táblázatba
+  table.appendChild(sor);
+
+  // Mezők törlése
+  document.getElementById("title").value = "";
+  document.getElementById("year").value = "";
+  document.getElementById("genre").value = "";
+  document.getElementById("rating").value = "";
 }
