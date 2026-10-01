@@ -131,10 +131,10 @@ function Add() {
   let genre = document.getElementById("genre").value;
   let rating = document.getElementById("rating").value;
 
-  if (rating < 1 || rating > 5) {
-    alert("A rating 1 és 5 között lehet!");
+if ((rating < 1 || rating > 5)&& (year < 1 || year > 2026) && (title.length < 3 || title.length > 100) && (genre.length < 3 || genre.length > 100)) {
+    
     return;
-  }
+}
 
   let film = {
     title: title,
