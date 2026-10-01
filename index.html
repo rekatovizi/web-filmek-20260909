@@ -19,19 +19,23 @@
             <form id="filmForm">
                 <div class="mb-3 mt-3">
                     <label for="title">Title</label>
-                    <input type="text" class="form-control" id="title" placeholder="Enter title" name="title" minlength="3" maxlength="100"     >
+                    <input type="text" class="form-control" id="title" placeholder="Enter title" name="title" minlength="3" maxlength="100" required>
+                    <span class="msg" id="titleMsg"></span>
                 </div>
                 <div class="mb-3">
                     <label for="year">Year</label>
-                    <input type="number" class="form-control" id="year" placeholder="Enter year" name="year" min="1" max="2026" >
+                    <input type="number" class="form-control" id="year" placeholder="Enter year" name="year" min="1" max="2026" required>
+                    <span class="msg" id="yearMsg"></span>
                 </div>
                 <div class="mb-3">
                     <label for="genre">Genre</label>
-                    <input type="text" class="form-control" id="genre" placeholder="Enter genre" name="genre" minlength="3" maxlength="100" >
+                    <input type="text" class="form-control" id="genre" placeholder="Enter genre" name="genre" minlength="3" maxlength="100" required>
+                    <span class="msg" id="genreMsg"></span>
                 </div>
                 <div class="mb-3">
                     <label for="rating">Rating</label>
-                    <input type="number" class="form-control" id="rating" placeholder="Enter rating" name="rating" min="1" max="5" >
+                    <input type="number" class="form-control" id="rating" placeholder="Enter rating" name="rating" min="1" max="5" required>
+                    <span class="msg" id="ratingMsg"></span>
                 </div>
                 <button type="button" class="btn btn-primary" onclick="Add()">Submit</button>
             </form>
