@@ -1,5 +1,20 @@
 .low-rating {
-    background-color: #ffcccc;
+    background-color: #dbb3ad;
     font-weight: bold;
 }
 
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
+body{
+    background-color: #c7e9ed !important;
+}
+.btn {
+    background-color: #034c54 !important;
+    color: white; 
+}
