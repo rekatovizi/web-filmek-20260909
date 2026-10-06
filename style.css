@@ -1,6 +1,14 @@
-.low-rating {
-    background-color: #dbb3ad;
+tr.low-rating, tr.low-rating td {
+    background-color: #dbb3ad !important;
     font-weight: bold;
+}
+
+table td , table th {
+    background-color: #c7e9ed !important;   
+}
+table th {
+    background-color: #42a2ac !important;
+    color: white;
 }
 
 .success {
